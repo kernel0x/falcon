@@ -18,7 +18,7 @@ Add the dependency:
 
 ````java
 dependencies {
-  androidTestImplementation 'com.github.kernel0x:falcon:1.0.0'
+  androidTestImplementation 'com.github.kernel0x:falcon:1.0.1'
 }
 ````
 
