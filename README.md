@@ -1,5 +1,5 @@
 # Falcon
-Thread-safe, crypto-protected, multi-level LRU caching with a life cycle.
+A lightweight and simple library to cache any serializable objects, using the LRU algorithm, two storage levels (files, memory), encryption and life cycle.
 
 ## Gradle Dependency
 
