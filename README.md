@@ -18,7 +18,7 @@ Add the dependency:
 
 ````java
 dependencies {
-  androidTestImplementation 'com.github.kernel0x:falcon:1.0.1'
+  androidImplementation 'com.github.kernel0x:falcon:1.0.1'
 }
 ````
 
@@ -27,12 +27,12 @@ dependencies {
 Create an object using the builder.
 
 ````java
-val cache = Cache.Builder().build<Any>(context)
+Cache<Object> cache = new Cache.Builder().build(getContext());
 ````
 OR with special type
 
 ````java
-val cache = Cache.Builder().build<Cat>(context)
+Cache<Cat> cache = new Cache.Builder().build(getContext());
 ````
 Available methods in the Builder
 
@@ -48,16 +48,16 @@ Important! Cached objects must implement Serializable
 
 ### Examples:
 ````java
-cache[KEY] = Cat()
+cache.set(KEY, Cat());
 ````
 ````java
-cache[KEY, Cat()] = DualCacheMode.ONLY_DISK
+cache.set(KEY, Cat(), DualCacheMode.ONLY_DISK);
 ````
 ````java
-cache[KEY, Cat()] = DualCacheMode.ONLY_RAM
+cache.set(KEY, Cat(), DualCacheMode.ONLY_RAM);
 ````
 ````java
-cache[KEY, Cat()] = ONE_SECOND
+cache.set(KEY, Cat(), new Duration(1, TimeUnit.SECONDS));
 ````
 
 ## Features
@@ -66,6 +66,7 @@ cache[KEY, Cat()] = ONE_SECOND
 * cache location selection (file or memory)
 * LRU, cache extrusion method
 * cache lifetime selection
+* thread safe
 
 ## Tests
 It's totally tested. [Check the tests!](/app/src/test/java/com/kernel/falcon) :wink:
