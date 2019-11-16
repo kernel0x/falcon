@@ -48,16 +48,16 @@ Important! Cached objects must implement Serializable
 
 ### Examples:
 ````java
-cache.set(KEY, Cat());
+cache.set(KEY, new Cat());
 ````
 ````java
-cache.set(KEY, Cat(), DualCacheMode.ONLY_DISK);
+cache.set(KEY, new Cat(), DualCacheMode.ONLY_DISK);
 ````
 ````java
-cache.set(KEY, Cat(), DualCacheMode.ONLY_RAM);
+cache.set(KEY, new Cat(), DualCacheMode.ONLY_RAM);
 ````
 ````java
-cache.set(KEY, Cat(), new Duration(1, TimeUnit.SECONDS));
+cache.set(KEY, new Cat(), new Duration(1, TimeUnit.SECONDS));
 ````
 
 ## Features
