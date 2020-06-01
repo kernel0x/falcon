@@ -18,7 +18,7 @@ Add the dependency:
 
 ````java
 dependencies {
-  implementation 'com.github.kernel0x:falcon:1.0.1'
+  implementation 'com.github.kernel0x:falcon:1.0.2'
 }
 ````
 
