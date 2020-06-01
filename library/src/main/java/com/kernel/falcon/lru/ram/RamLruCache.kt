@@ -128,8 +128,12 @@ class RamLruCache<K, V>(private var maxSize: Int) : LruCache<K, V> {
         while (true) {
             val key: K
             val value: V
-            check(!(size < 0 || map.isEmpty() && size != 0)) { javaClass.name + ".sizeOf() is reporting inconsistent results!" }
-
+            
+            if (size < 0 || map.isEmpty() && size != 0) {
+                //throw IllegalStateException(javaClass.name + ".sizeOf() is reporting inconsistent results!")
+                break
+            }
+            
             if (size <= maxSize) {
                 break
             }
